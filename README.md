@@ -78,6 +78,8 @@ mlproject/
 - **src/**: All source code, including exception handling, logging, utilities, ML pipeline components, and pipeline scripts.
   - **components/data_ingestion.py**: Handles the process of reading raw data, splitting it into training and test sets, and saving the processed data for further steps in the machine learning pipeline.
   - **components/data_transformation.py**: Responsible for transforming raw data into a suitable format for model training, including preprocessing steps such as encoding, scaling, and feature engineering.
+  - **components/model_trainer.py**: Contains the logic for training machine learning models, selecting the best model, and saving the trained model artifact.
+  - **utils.py**: Includes utility functions, such as model evaluation, to assess the performance of trained models using metrics like R2 score and more.
   - **main.py**: The main entry point for running the project pipeline or application logic.
 
 ### License
