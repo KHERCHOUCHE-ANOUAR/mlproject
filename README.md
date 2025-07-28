@@ -76,6 +76,7 @@ mlproject/
 - **mlproject.egg-info/**: Metadata generated after installing the package.
 - **notebook/**: Jupyter notebooks for EDA and model training, as well as CatBoost training artifacts and the dataset.
 - **src/**: All source code, including exception handling, logging, utilities, ML pipeline components, and pipeline scripts.
+  - **components/data_ingestion.py**: Handles the process of reading raw data, splitting it into training and test sets, and saving the processed data for further steps in the machine learning pipeline.
 
 ### License
 
