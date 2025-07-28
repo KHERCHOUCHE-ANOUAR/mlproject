@@ -36,12 +36,3 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e, sys) from e
-
-if __name__ == "__main__":
-    data_ingestion = DataIngestion()
-    train_data_path, test_data_path = data_ingestion.initiate_data_ingestion()
-    logging.info(f"Train data saved at: {train_data_path}")
-    logging.info(f"Test data saved at: {test_data_path}")
-    print(f"Train data saved at: {train_data_path}")
-    print(f"Test data saved at: {test_data_path}")
-    sys.exit(0)
