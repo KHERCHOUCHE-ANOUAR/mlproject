@@ -145,6 +145,8 @@ env.bak/
 venv.bak/
 artifacts/
 logs/
+catboost_info/
+notebook/catboost_info/
 # Spyder project settings
 .spyderproject
 .spyproject

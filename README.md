@@ -11,6 +11,7 @@ mlproject/
 ├── requirements.txt         # Python dependencies
 ├── setup.py                 # Project installation script
 ├── setup_env.sh             # Shell script to set up the environment
+├── app.py                   # Flask web application entry point
 │
 ├── logs/                    # Log files generated during runs
 │   └── <timestamp>.log/     # Log folders by run timestamp
@@ -22,13 +23,6 @@ mlproject/
 ├── notebook/                # Jupyter notebooks for EDA and model training
 │   ├── 1 . EDA STUDENT PERFORMANCE .ipynb   # Exploratory Data Analysis
 │   ├── 2. MODEL TRAINING.ipynb              # Model training steps
-│   └── catboost_info/       # CatBoost model training artifacts
-│       ├── catboost_training.json
-│       ├── learn_error.tsv
-│       ├── time_left.tsv
-│       ├── learn/
-│       │   └── events.out.tfevents
-│       └── tmp/
 │   └── data/
 │       └── stud.csv         # Dataset used in the project
 │
@@ -79,8 +73,10 @@ mlproject/
   - **components/data_ingestion.py**: Handles the process of reading raw data, splitting it into training and test sets, and saving the processed data for further steps in the machine learning pipeline.
   - **components/data_transformation.py**: Responsible for transforming raw data into a suitable format for model training, including preprocessing steps such as encoding, scaling, and feature engineering.
   - **components/model_trainer.py**: Contains the logic for training machine learning models, selecting the best model, and saving the trained model artifact.
+  - **pipeline/predict_pipeline.py**: Contains the `PredictPipeline` class for generating predictions using the trained model and preprocessing pipeline, and the `CustomData` class for collecting and formatting user input data (from the Flask web form) into a DataFrame suitable for prediction. This enables integration with the Flask app and the HTML form in `templates/home.html` for real-time predictions.
   - **utils.py**: Includes utility functions, such as model evaluation, to assess the performance of trained models using metrics like R2 score and more.
   - **main.py**: The main entry point for running the project pipeline or application logic.
+  - **app.py**: The Flask web application entry point. Handles HTTP requests, renders HTML templates, collects user input, and serves real-time predictions using the trained model pipeline.
 
 ### License
 

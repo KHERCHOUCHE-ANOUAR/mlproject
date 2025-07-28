@@ -5,3 +5,5 @@ matplotlib
 catboost
 xgboost
 ipykernel
+seaborn
+Flask

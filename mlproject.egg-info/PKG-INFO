@@ -10,6 +10,8 @@ Requires-Dist: matplotlib
 Requires-Dist: catboost
 Requires-Dist: xgboost
 Requires-Dist: ipykernel
+Requires-Dist: seaborn
+Requires-Dist: Flask
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
