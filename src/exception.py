@@ -1,5 +1,5 @@
 import sys
-
+import logger
 
 
 def error_message_detail(error, context:sys):
@@ -23,3 +23,10 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
+
+if __name__ == "__main__":
+    try:
+        raise ValueError("An example error")
+    except Exception as e:
+        exc = CustomException(e, sys)
+        logger.logging.info(exc)
