@@ -77,6 +77,8 @@ mlproject/
 - **notebook/**: Jupyter notebooks for EDA and model training, as well as CatBoost training artifacts and the dataset.
 - **src/**: All source code, including exception handling, logging, utilities, ML pipeline components, and pipeline scripts.
   - **components/data_ingestion.py**: Handles the process of reading raw data, splitting it into training and test sets, and saving the processed data for further steps in the machine learning pipeline.
+  - **components/data_transformation.py**: Responsible for transforming raw data into a suitable format for model training, including preprocessing steps such as encoding, scaling, and feature engineering.
+  - **main.py**: The main entry point for running the project pipeline or application logic.
 
 ### License
 

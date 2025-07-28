@@ -1,9 +1,9 @@
 import os
 import sys
-
+from src.logger import logging
+from src.exception import CustomException
 import numpy as np 
 import pandas as pd
-import dill
 import pickle
 from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
@@ -16,6 +16,7 @@ def save_object(file_path, obj):
 
         os.makedirs(dir_path, exist_ok=True)
 
+        logging.info(f"Saving object to {file_path}")
         with open(file_path, "wb") as file_obj:
             pickle.dump(obj, file_obj)
 
