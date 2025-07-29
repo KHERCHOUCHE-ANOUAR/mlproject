@@ -11,6 +11,7 @@ mlproject/
 ├── requirements.txt         # Python dependencies
 ├── setup.py                 # Project installation script
 ├── setup_env.sh             # Shell script to set up the environment
+├── Dockerfile               # Dockerfile to build a container image for deployment
 ├── app.py                   # Flask web application entry point
 │
 ├── logs/                    # Log files generated during runs
@@ -63,6 +64,32 @@ mlproject/
    ```
 5. **Run notebooks:**
    Open the notebooks in the `notebook/` folder for EDA and model training.
+
+### Docker & Azure Container Registry
+
+You can build and deploy this project as a Docker container. Below are the steps to build the Docker image and push it to Azure Container Registry (ACR):
+
+1. **Build the Docker image:**
+   ```bash
+   docker build -t <your-image-name>:<tag> .
+   ```
+
+2. **Tag the image for Azure Container Registry:**
+   ```bash
+   docker tag <your-image-name>:<tag> <your-acr-name>.azurecr.io/<your-image-name>:<tag>
+   ```
+
+3. **Login to Azure Container Registry:**
+   ```bash
+   az acr login --name <your-acr-name>
+   ```
+
+4. **Push the image to Azure Container Registry:**
+   ```bash
+   docker push <your-acr-name>.azurecr.io/<your-image-name>:<tag>
+   ```
+
+You can then use this image in Azure Web App for Containers or other Azure services.
 
 ### Folder Descriptions
 
